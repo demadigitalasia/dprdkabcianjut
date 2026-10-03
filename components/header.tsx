@@ -109,6 +109,11 @@ function tautanAktif(pathname: string, href: string) {
 
 export function Header() {
   const pathname = usePathname();
+
+  return <IsiHeader key={pathname} pathname={pathname} />;
+}
+
+function IsiHeader({ pathname }: { pathname: string }) {
   const [menuTerbuka, setMenuTerbuka] = useState(false);
   const [kelompokMobilTerbuka, setKelompokMobilTerbuka] = useState<string | null>(null);
   const [kelompokDesktopTerbuka, setKelompokDesktopTerbuka] = useState<string | null>(null);
@@ -140,12 +145,6 @@ export function Header() {
       document.removeEventListener("keydown", tutupDenganEscape);
     };
   }, []);
-
-  useEffect(() => {
-    setKelompokDesktopTerbuka(null);
-    setKelompokMobilTerbuka(null);
-    setMenuTerbuka(false);
-  }, [pathname]);
 
   function tutupNavigasi() {
     setKelompokDesktopTerbuka(null);
