@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { connection } from "next/server";
-import { AGENDA, ANGGOTA, BERITA, DAPIL_INFO, DOKUMEN, type Agenda, type Dokumen } from "@/lib/demo-data";
+import { AGENDA, ANGGOTA, BERITA, DAPIL_INFO, DOKUMEN, PIMPINAN_DPRD, type Agenda, type Dokumen } from "@/lib/demo-data";
 import { KartuArsip } from "@/components/kartu-arsip";
+import { SorotanPimpinan } from "@/components/sorotan-pimpinan";
 import { GarisPadi, ButirPadi } from "@/components/garis-padi";
 import { Ikon } from "@/components/ikon";
 
@@ -38,6 +39,11 @@ export default async function Beranda() {
     .slice(0, 2);
   const [utama, ...lainnya] = [...BERITA].sort((a, b) => b.tanggal.localeCompare(a.tanggal)).slice(0, 4);
   const dokumenTerbaru = dokumenTerbaruPerKategori(DOKUMEN);
+  const ketuaDprd = PIMPINAN_DPRD.find((anggota) => anggota.jabatan === "Ketua");
+  const urutanWakilKetua = ["ganjar-ramadhan", "susilawati", "lepi-ali-firmansyah"];
+  const wakilDprd = PIMPINAN_DPRD
+    .filter((anggota) => anggota.jabatan === "Wakil Ketua")
+    .sort((a, b) => urutanWakilKetua.indexOf(a.slug) - urutanWakilKetua.indexOf(b.slug));
 
   return (
     <>
@@ -138,6 +144,9 @@ export default async function Beranda() {
           </div>
         </div>
       </section>
+
+      {/* Pimpinan DPRD — ditampilkan sebelum berita agar mudah dikenali warga */}
+      {ketuaDprd && <SorotanPimpinan ketua={ketuaDprd} wakilKetua={wakilDprd} />}
 
       {/* Kabar DPRD — satu sorotan dan daftar ringkas */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
