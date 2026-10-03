@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Demo — Website DPRD Kabupaten Cianjur
 
-## Getting Started
+Purwarupa (demo) klikabel dengan **data dummy (fiktif)** — bukan situs resmi.
+Dibangun dengan **Next.js 16 (App Router) + TypeScript + Tailwind CSS 4**,
+mengikuti arah desain **"Beasan"** dari suite perencanaan.
 
-First, run the development server:
+> Brief lengkap: [`../docs/demo/brief-demo.md`](../docs/demo/brief-demo.md)
+
+## Menjalankan
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build produksi:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm build && pnpm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Halaman
 
-## Learn More
+| Rute | Isi |
+|---|---|
+| `/` | Beranda (hero editorial, agenda, berita, lembar arsip, statistik) |
+| `/anggota` + `/anggota/[slug]` | Profil contoh, filter dapil/fraksi/komisi, pencarian + profil |
+| `/berita` + `/berita/[slug]` | Daftar berita contoh dengan filter/pencarian & detail |
+| `/agenda` | Agenda contoh + unduhan `.ics` simulasi |
+| `/transparansi` | Arsip contoh (filter kategori/tahun) + PDF demo |
+| `/aspirasi` | Form multi-langkah simulasi + gerbang SP4N |
+| `/aspirasi/lacak` | Lacak tiket simulasi (localStorage browser yang sama) |
+| `/aspirasi/statistik` | Statistik agregat (ambang n ≥ 5) |
+| `/kontak`, `/aksesibilitas` | Kontak & pernyataan aksesibilitas |
+| `/panel/aspirasi` | Panel triage Setwan (mock) |
+| `/panel/aspirasi-saya` | Daftar aspirasi anggota (mock) |
+| `/panel/aspirasi-pimpinan` | Ringkasan pimpinan (mock) |
 
-To learn more about Next.js, take a look at the following resources:
+## Guardrail (wajib dijaga)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Hanya data dummy** — dilarang menambahkan data pribadi nyata.
+2. `noindex` aktif (`app/robots.ts` + metadata) — demo tidak boleh terindeks.
+3. Data dalam purwarupa ini bersifat fiktif dan belum terhubung ke layanan resmi.
+4. Tanpa backend/database — tiket aspirasi disimulasikan di `localStorage`; jangan memasukkan data pribadi.
+5. Hosting demo: **Vercel**. Produksi: self-host di wilayah Indonesia (rencana).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> **Lambang:** berkas resmi ada di `public/logo-cianjur.webp` dan dipakai pada
+> `header.tsx` & `footer.tsx` melalui `next/image`. Komponen ilustrasi SVG
+> (`components/logo-cianjur.tsx`) disimpan sebagai cadangan/referensi.
 
-## Deploy on Vercel
+## Deploy ke Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push folder ini ke repositori GitHub.
+2. Di Vercel: **New Project → Import repo** → framework terdeteksi otomatis (Next.js).
+3. Tidak perlu environment variable.
+4. Deploy — bagikan URL demo secara terbatas.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Struktur
+
+```
+app/          # Rute (App Router)
+components/   # UI "Beasan" (Garis Padi, kartu, form, dsb.)
+lib/demo-data # Data dummy bertipe (anggota, berita, dokumen, agenda, aspirasi)
+```

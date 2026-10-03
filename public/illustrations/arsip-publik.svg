@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" fill="none">
+  <title>Arsip publik Cianjur</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M75 184 176 83l76 76 75-93 112 118" stroke="#0A3D2E" stroke-width="7"/>
+    <path d="m98 184 78-78 76 76 75-92 91 97" stroke="#00A551" stroke-width="3" opacity=".75"/>
+    <circle cx="502" cy="89" r="24" fill="#F5D200"/>
+    <path d="M61 228c79-18 151-18 218 0 68 18 140 18 217 0 28-6 55-8 82-5M67 247c76-15 146-13 212 5 70 19 140 19 210 0 27-7 55-10 83-8" stroke="#0B76C4" stroke-width="4" opacity=".68"/>
+    <path d="M236 177h163v182H236z" fill="#fff" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="M221 182h193l-96-62-97 62Z" fill="#F5D200" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="M270 214h95M270 240h95M270 266h95" stroke="#0A3D2E" stroke-width="5" opacity=".72"/>
+    <path d="M270 314h36v45h-36z" fill="#E6F6EC" stroke="#00A551" stroke-width="5"/>
+    <path d="M120 351c13-35 29-52 49-52 18 0 34 17 47 52m-36-75c0 14-4 21-12 21s-12-7-12-21 4-21 12-21 12 7 12 21Z" stroke="#0A3D2E" stroke-width="5"/>
+    <path d="M425 351c13-35 29-52 49-52 18 0 34 17 47 52m-36-75c0 14-4 21-12 21s-12-7-12-21 4-21 12-21 12 7 12 21Z" stroke="#0A3D2E" stroke-width="5"/>
+    <path d="M95 362h450" stroke="#00A551" stroke-width="3" opacity=".65"/>
+  </g>
+</svg>

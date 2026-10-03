@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   PALET — diambil dari Lambang Kabupaten Cianjur (Perda 19/1987)
+   kuning emas · hijau gunung · biru Ci Anjur · hitam (outline)
+   Eksekusi: modern civic — kartu soft-elevated, aksen gradien.
+   ============================================================ */
+@theme {
+  --color-gunung: #0a3d2e; /* hijau tua — hero, header, footer */
+  --color-gunung-hover: #0f5138;
+  --color-daun: #00a551; /* hijau daun — aksen & gradien */
+  --color-daun-tua: #007a3d; /* tombol (kontras teks putih aman) */
+  --color-pucuk: #e6f6ec; /* hijau muda lembut */
+  --color-emas: #f5d200; /* kuning emas lambang */
+  --color-emas-terang: #ffe566;
+  --color-emas-tua: #8a6d1b; /* teks kecil di latar terang */
+  --color-cianjur: #0b76c4; /* biru Ci Anjur */
+  --color-krem: #f5f8f6; /* latar lembut (cool) */
+  --color-tinta: #0c1512; /* near-black */
+  --color-tinta-pudar: #5b6b64;
+  --color-jerami: #e8eeea;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-space);
+  --font-body: var(--font-jakarta);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Kartu modern: border halus + bayangan lembut berlapis */
+@utility sticker {
+  border: 1px solid var(--color-jerami);
+  box-shadow:
+    0 1px 2px rgb(12 21 18 / 0.04),
+    0 16px 40px -24px rgb(12 21 18 / 0.18);
+}
+
+@utility sticker-sm {
+  border: 1px solid var(--color-jerami);
+  box-shadow: 0 1px 2px rgb(12 21 18 / 0.05);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-tinta);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-emas);
+  color: var(--color-tinta);
+}
+
+/* Fokus keyboard yang konsisten (WCAG 2.4.7 / 1.4.11) */
+:focus-visible {
+  outline: 2px solid var(--color-cianjur);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Di area gelap, gunakan kuning emas agar kontras cukup */
+header :focus-visible,
+footer :focus-visible,
+.bg-gunung :focus-visible {
+  outline-color: var(--color-emas);
 }

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" fill="none">
+  <title>Akses yang terbuka bagi semua</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M210 55v181M126 101h168M210 112l-48 80m48-80 48 80" stroke="#0A3D2E" stroke-width="8"/>
+    <circle cx="210" cy="43" r="20" fill="#F5D200" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="M127 101h166" stroke="#00A551" stroke-width="4"/>
+    <path d="M121 195c17 37 48 56 89 56s72-19 89-56" stroke="#0B76C4" stroke-width="6"/>
+    <path d="M102 257h216" stroke="#0A3D2E" stroke-width="5" opacity=".7"/>
+    <circle cx="210" cy="111" r="7" fill="#0B76C4"/>
+    <path d="M91 113c0-22 18-40 40-40m198 40c0-22-18-40-40-40" stroke="#F5D200" stroke-width="5"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" fill="none">
+  <title>Arsip belum ditemukan</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M91 232V96a15 15 0 0 1 15-15h123l70 70v81" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="M229 82v69h69" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="M124 177h105M124 203h74" stroke="#0B76C4" stroke-width="6"/>
+    <circle cx="285" cy="215" r="39" fill="#fff" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="m285 194 0 25m0 12v1" stroke="#0A3D2E" stroke-width="7"/>
+    <path d="M73 254h274" stroke="#00A551" stroke-width="4" opacity=".72"/>
+    <path d="m67 123 10-10m-10 0 10 10m267 44 10-10m-10 0 10 10" stroke="#F5D200" stroke-width="5"/>
+  </g>
+</svg>

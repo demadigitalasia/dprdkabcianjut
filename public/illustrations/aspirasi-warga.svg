@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" fill="none">
+  <title>Warga menyampaikan aspirasi kepada DPRD</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M232 76h194a24 24 0 0 1 24 24v104a24 24 0 0 1-24 24H332l-44 31v-31h-56a24 24 0 0 1-24-24V100a24 24 0 0 1 24-24Z" fill="#fff" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="M260 122h133M260 151h99" stroke="#0B76C4" stroke-width="7"/>
+    <path d="m362 179 13 13 24-27" stroke="#00A551" stroke-width="6"/>
+    <path d="M84 352c13-40 34-60 63-60s50 20 63 60m-42-88c0 17-7 26-21 26s-21-9-21-26 7-26 21-26 21 9 21 26Z" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="M430 352c13-40 34-60 63-60s50 20 63 60m-42-88c0 17-7 26-21 26s-21-9-21-26 7-26 21-26 21 9 21 26Z" stroke="#0A3D2E" stroke-width="6"/>
+    <path d="M113 352h414" stroke="#00A551" stroke-width="4" opacity=".7"/>
+    <path d="M316 270c18-23 36-34 54-34 17 0 31 11 42 34m-31-55c0 12-4 18-11 18s-11-6-11-18 4-18 11-18 11 6 11 18Z" stroke="#0B76C4" stroke-width="5"/>
+    <circle cx="519" cy="89" r="18" fill="#F5D200"/>
+    <path d="M519 55v-9m0 86v-9m34-34h9m-86 0h9m58-25 7-7m-65 65 7-7m51 0 7 7m-65-65 7 7" stroke="#8A6D1B" stroke-width="4"/>
+  </g>
+</svg>
