@@ -64,26 +64,26 @@ export default async function Beranda() {
           width={2172}
           height={724}
           sizes="(max-width: 640px) 150vw, (max-width: 1024px) 130vw, 112vw"
-          className="pointer-events-none absolute -bottom-8 -right-[34vw] z-0 w-[150vw] max-w-none opacity-80 sm:-right-[25vw] sm:w-[130vw] lg:-bottom-[12%] lg:-right-[12vw] lg:w-[112vw] xl:right-[-8vw] xl:w-[min(1450px,110vw)]"
+          className="pointer-events-none absolute -bottom-2 -right-[52vw] z-0 w-[145vw] max-w-none opacity-55 sm:-bottom-8 sm:-right-[25vw] sm:w-[130vw] sm:opacity-80 lg:-bottom-[12%] lg:-right-[12vw] lg:w-[112vw] xl:right-[-8vw] xl:w-[min(1450px,110vw)]"
           priority
         />
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 sm:py-24 lg:grid-cols-12">
+          <div className="min-w-0 lg:col-span-7">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-emas backdrop-blur">
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-emas" />
               Portal DPRD Kabupaten Cianjur
             </p>
-            <h1 className="mt-6 font-heading text-4xl leading-[1.05] sm:text-6xl">
+            <h1 className="mt-5 max-w-[18ch] font-heading text-[2.15rem] leading-[1.08] sm:mt-6 sm:max-w-none sm:text-6xl">
               Suara warga Cianjur,{" "}
               <span className="bg-gradient-to-r from-emas to-emas-terang bg-clip-text text-transparent">
                 sampai ke wakilnya.
               </span>
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70">
+            <p className="mt-4 w-full max-w-xl text-[15px] leading-relaxed text-white/80 sm:mt-5 sm:text-base sm:text-white/70">
               Satu pintu informasi DPRD Kabupaten Cianjur: temukan wakil Anda,
               ikuti agenda rapat, akses dokumen publik, dan siapkan masukan untuk DPRD.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
               <Link
                 href="/aspirasi"
                 className="rounded-full bg-emas px-6 py-3 text-sm font-bold text-tinta shadow-lg shadow-emas/25 transition-transform hover:-translate-y-0.5"
@@ -98,7 +98,7 @@ export default async function Beranda() {
               </Link>
             </div>
 
-            <dl aria-label="Komposisi DPRD Kabupaten Cianjur" className="mt-8 grid max-w-sm grid-cols-2 divide-x divide-white/15 rounded-2xl border border-white/15 bg-gunung/70 px-4 py-3 backdrop-blur-sm sm:mt-10 sm:px-5 sm:py-4">
+            <dl aria-label="Komposisi DPRD Kabupaten Cianjur" className="mt-7 grid max-w-sm grid-cols-2 divide-x divide-white/15 rounded-2xl border border-white/15 bg-gunung/80 px-4 py-3 backdrop-blur-sm sm:mt-10 sm:px-5 sm:py-4">
               <div>
                 <dt className="sr-only">Anggota dewan</dt>
                 <dd className="font-heading text-2xl text-white">{ANGGOTA.length}</dd>
@@ -122,13 +122,13 @@ export default async function Beranda() {
       {/* Pita Agenda — kartu kuning mengambang */}
       <section aria-labelledby="agenda-terdekat" className="relative z-10 mx-auto mt-0 max-w-6xl px-4 sm:-mt-7 sm:px-6">
         <div className="rounded-2xl bg-emas p-4 text-tinta shadow-lg shadow-emas/15 sm:p-5 sm:px-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
+          <div className="flex flex-col gap-3 sm:gap-4 lg:flex-row lg:items-center">
             <h2 id="agenda-terdekat" className="flex shrink-0 items-center gap-2 text-sm font-bold">
               <ButirPadi /> Agenda Terdekat
             </h2>
             {agendaMendatang.length ? <ul className="flex min-w-0 flex-1 flex-col divide-y divide-tinta/15 lg:flex-row lg:divide-x lg:divide-y-0">
               {agendaMendatang.map((a) => (
-                <li key={a.id} className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-x-3 py-3 text-sm first:pt-0 last:pb-0 lg:flex-1 lg:px-4 lg:py-0 lg:first:pl-0 lg:last:pr-0">
+                <li key={a.id} className="grid min-w-0 grid-cols-[3.5rem_minmax(0,1fr)] gap-x-3 py-2.5 text-sm first:pt-0 last:pb-0 sm:py-3 lg:flex-1 lg:px-4 lg:py-0 lg:first:pl-0 lg:last:pr-0">
                   <time dateTime={`${a.tanggal}T${a.waktu.slice(0, 5)}:00+07:00`} className="row-span-2 shrink-0 font-heading font-bold">{tanggalPendek(a.tanggal)}</time>
                   <span className="min-w-0 leading-snug text-tinta">{a.judul}</span>
                   <span className="text-xs text-tinta/70">{a.waktu}</span>

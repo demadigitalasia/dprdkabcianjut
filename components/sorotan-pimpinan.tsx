@@ -32,9 +32,9 @@ export function SorotanPimpinan({
           </Link>
         </header>
 
-        <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-4 xl:gap-5">
+        <ul className="mt-6 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-4 pb-4 [scrollbar-width:thin] [scrollbar-color:#8ba99a_transparent] sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:mt-8 lg:grid-cols-4 lg:gap-4 xl:gap-5">
           {daftarPimpinan.map((anggota) => (
-            <li key={anggota.slug}>
+            <li key={anggota.slug} className="w-[78vw] max-w-[19rem] shrink-0 snap-start sm:w-auto sm:max-w-none sm:shrink">
               <Link
                 href={`/anggota/${anggota.slug}`}
                 aria-label={`${anggota.jabatan} ${anggota.nama}, Partai ${anggota.partai}, Dapil ${anggota.dapil.replace("Cianjur ", "")}`}
@@ -45,7 +45,7 @@ export function SorotanPimpinan({
                     src={anggota.foto}
                     alt={`Potret ${anggota.nama}`}
                     fill
-                    sizes="(max-width: 639px) 90vw, (max-width: 1023px) 45vw, 25vw"
+                    sizes="(max-width: 639px) 78vw, (max-width: 1023px) 45vw, 25vw"
                     className="scale-[1.07] object-cover object-top transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.11] motion-reduce:transition-none"
                   />
                 ) : (
